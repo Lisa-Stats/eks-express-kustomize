@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-deployment
+  labels:
+    app: express
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: express
+  template:
+    metadata:
+      labels:
+        app: express
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - express
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: express
+          image: IMAGE:TAG
+          ports:
+            - containerPort: 80
+          env:
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: config
+                  key: db_name

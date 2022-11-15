@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+  - namespace.yaml
+
+namePrefix: dev-
+namespace: dev
+
+images:
+  - name: IMAGE:TAG
+    newName: 993783881982.dkr.ecr.us-west-1.amazonaws.com/express
+    newTag: "39f5827e687b146470f5e25de16486b86aead68d"
+
+configMapGenerator:
+  - name: config
+    envs:
+      - dev.env
