@@ -11,7 +11,7 @@ namespace: dev
 images:
 - name: IMAGE:TAG
   newName: 993783881982.dkr.ecr.us-west-1.amazonaws.com/express
-  newTag: 62d376ee835b495c4a2a2339c5f84053a0afc7e3
+  newTag: dcae07f2a8dfda85ef8f7eca341b3b59f167fe51
 
 configMapGenerator:
 - envs:
