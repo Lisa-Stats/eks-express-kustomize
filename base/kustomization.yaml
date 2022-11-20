@@ -5,6 +5,7 @@ resources:
   - express-deployment.yaml
   - express-service.yaml
   - express-ingress.yaml
+  - application.yaml
 
 commonLabels:
   app: express
