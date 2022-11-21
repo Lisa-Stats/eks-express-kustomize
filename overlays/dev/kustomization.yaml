@@ -13,6 +13,7 @@ configMapGenerator:
 - envs:
   - dev.env
   name: config
+  namespace: default
 
 generatorOptions:
   annotations:
