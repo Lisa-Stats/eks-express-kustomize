@@ -7,7 +7,7 @@ resources:
 images:
 - name: IMAGE:TAG
   newName: 993783881982.dkr.ecr.us-west-1.amazonaws.com/express
-  newTag: e8cd0e18297fde132cc741b61775269dd20f58ba
+  newTag: 8fe7e1c79fbfff603492c5faa1a7c54ee1be99c1
 
 configMapGenerator:
 - envs:
